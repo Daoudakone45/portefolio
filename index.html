@@ -18,8 +18,9 @@
           <li><a href="#hero">Accueil</a></li>
           <li><a href="#about">À propos</a></li>
           <li><a href="#education">Formation</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#experiences">Expériences</a></li>
+          <li><a href="#projets">Mes Projets</a></li>
+          <li><a href="#interests">Intérêts</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="burger">
@@ -39,7 +40,7 @@
         <h1>Bonjour, je suis <span style="color: var(--primary-color);">Daouda KONE</span></h1>
         <p>Développeur Web et Logiciel | Designer | Créateur</p>
         <div class="hero-btns">
-          <a href="#portfolio" class="btn">Voir Portfolio</a>
+          <a href="#projets" class="btn">Voir Portfolio</a>
           <a href="#contact" class="btn btn-outline">Me Contacter</a>
         </div>
       </div>
@@ -97,48 +98,51 @@
         <h2>Formation</h2>
         <p>Mon parcours académique</p>
       </div>
-      <div class="education-container">
-        <div class="education-item">
-          <div class="education-header">
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content left">
+            <div class="timeline-date">2025 - 2026</div>
             <h3>BUT 3 Informatique</h3>
-            <span class="education-period">2025 - 2026</span>
-          </div>
-          <p class="education-school">Université Gustave Eiffel</p>
-          <div class="education-details">
-            <p><strong>Domaines:</strong> Développement avancé, Python, C, JavaScript, React, Java</p>
-            <p><strong>Focus:</strong> Réseaux, Programmation avancée, Qualité de programmation</p>
+            <p class="timeline-school">Université Gustave Eiffel</p>
+            <div class="timeline-details">
+              <p><strong>Domaines:</strong> Développement avancé, Python, C, JavaScript, React, Java</p>
+              <p><strong>Focus:</strong> Réseaux, Programmation avancée, Qualité de programmation</p>
+            </div>
           </div>
         </div>
 
-        <div class="education-item">
-          <div class="education-header">
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content right">
+            <div class="timeline-date">2024 - 2025</div>
             <h3>1ère du cycle d'ingénieur en Informatique</h3>
-            <span class="education-period">2024 - 2025</span>
-          </div>
-          <p class="education-school">École d'ingénieur ESIEE PARIS</p>
-          <div class="education-details">
-            <p><strong>Domaines:</strong> Développement avancé, Réseaux, Programmation avancée, Qualité de programmation</p>
-            <p><strong>Technologies:</strong> Python, C, JavaScript, React, Java</p>
+            <p class="timeline-school">École d'ingénieur ESIEE PARIS</p>
+            <div class="timeline-details">
+              <p><strong>Domaines:</strong> Développement avancé, Réseaux, Programmation avancée, Qualité de programmation</p>
+              <p><strong>Technologies:</strong> Python, C, JavaScript, React, Java</p>
+            </div>
           </div>
         </div>
 
-        <div class="education-item">
-          <div class="education-header">
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content left">
+            <div class="timeline-date">2021 - 2024</div>
             <h3>Licence Mathématiques - Informatique</h3>
-            <span class="education-period">2021 - 2024</span>
-          </div>
-          <p class="education-school">Université de Lille</p>
-          <div class="education-details">
-            <p><strong>Langages:</strong> C#, Java, Python, C, C++, JavaScript, SQL, JEE</p>
-            <p><strong>Environnements:</strong> Visual Studio, Eclipse, Android Studio</p>
-            <p><strong>Domaines couverts:</strong> Algorithmique, IA, Réalité virtuelle, Traitement d'images, Technologies 3D</p>
-            <p><strong>Spécialisations:</strong></p>
-            <ul class="education-list">
-              <li>Programmation : Python, Java, JavaScript, HTML, CSS, SQL</li>
-              <li>Analyse de données : NumPy, Matplotlib, Pandas, Excel</li>
-              <li>Mathématiques : Algèbre, Statistiques, Analyse, Géométrie</li>
-              <li>Informatique théorique : Logique, Bases de données, Automates, Langages réguliers et irréguliers</li>
-            </ul>
+            <p class="timeline-school">Université de Lille</p>
+            <div class="timeline-details">
+              <p><strong>Langages:</strong> C#, Java, Python, C, C++, JavaScript, SQL, JEE</p>
+              <p><strong>Environnements:</strong> Visual Studio, Eclipse, Android Studio</p>
+              <p><strong>Domaines couverts:</strong> Algorithmique, IA, Réalité virtuelle, Traitement d'images, Technologies 3D</p>
+              <p><strong>Spécialisations:</strong></p>
+              <ul class="education-list">
+                <li>Programmation : Python, Java, JavaScript, HTML, CSS, SQL</li>
+                <li>Analyse de données : NumPy, Matplotlib, Pandas, Excel</li>
+                <li>Mathématiques : Algèbre, Statistiques, Analyse, Géométrie</li>
+                <li>Informatique théorique : Logique, Bases de données, Automates, Langages réguliers et irréguliers</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -162,7 +166,7 @@
           <ul class="experience-list">
             <li><strong>APIs REST :</strong> Django, Flask – conception, développement, adaptation aux besoins utilisateurs</li>
             <li><strong>SQL :</strong> Optimisation des requêtes, gestion de bases de données, amélioration des performances</li>
-            <li><strong>GUI Python :</strong> Interfaces interactives (Tkinter, PyQt, DearPyGui), création de widgets (fenêtres, boutons, sliders, menus), optimisation de la fluidité</li>
+            <li><strong>GUI Python :</strong> Interfaces interactives (Tkinter, PyQt, DearPyGui, Qt), création de widgets (fenêtres, boutons, sliders, menus), optimisation de la fluidité</li>
             <li><strong>Intégration de bibliothèques :</strong> Pandas, OpenCV, DearPyGui, etc</li>
             <li><strong>Automatisation :</strong> Scripts Python, Bash, PowerShell – gain de temps et efficacité opérationnelle</li>
           </ul>
@@ -200,7 +204,7 @@
   </section>
 
   <!-- Portfolio Section -->
-  <section id="portfolio">
+  <section id="projets">
     <div class="container">
       <div class="section-title">
         <h2>Mes projets</h2>
@@ -260,6 +264,53 @@
             <p>Développement d'une application web de gestion de projet pour une agence.</p>
             <a href="#" class="btn">Voir le projet</a>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interests Section -->
+  <section id="interests">
+    <div class="container">
+      <div class="section-title">
+        <h2>Centres d'Intérêt</h2>
+        <p>Passions et activités</p>
+      </div>
+      <div class="interests-container">
+        <div class="interest-item">
+          <div class="interest-icon">
+            <i class="fas fa-futbol"></i>
+          </div>
+          <h3>Sport</h3>
+          <p>Passionné du football et fitness, je pratique régulièrement pour maintenir une bonne santé physique et mentale.</p>
+        </div>
+        <div class="interest-item">
+          <div class="interest-icon">
+            <i class="fas fa-utensils"></i>
+          </div>
+          <h3>Cuisine</h3>
+          <p>J'aime découvrir et préparer de nouvelles recettes, explorer différentes cuisines du monde.</p>
+        </div>
+        <div class="interest-item">
+          <div class="interest-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Vie Associative</h3>
+          <p>Impliqué dans la vie associative, je crois en l'importance du travail collaboratif et de l'engagement communautaire.</p>
+        </div>
+        <div class="interest-item">
+          <div class="interest-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h3>Bénévolat</h3>
+          <p>Engagé dans le bénévolat pour contribuer positivement à la société et aider ceux qui en ont besoin.</p>
+        </div>
+        <div class="interest-item">
+          <div class="interest-icon">
+            <i class="fas fa-music"></i>
+          </div>
+          <h3>Musique</h3>
+          <p>Grand amateur de musique, j'écoute et explore différents genres pour me détendre et m'inspirer.</p>
         </div>
       </div>
     </div>

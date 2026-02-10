@@ -725,6 +725,132 @@
       color: var(--gray-color);
     }
 
+    /* Timeline Section */
+    .timeline {
+      position: relative;
+      padding: 20px 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    }
+
+    .timeline-item {
+      margin-bottom: 50px;
+      position: relative;
+    }
+
+    .timeline-marker {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 20px;
+      background-color: var(--primary-color);
+      border: 3px solid white;
+      border-radius: 50%;
+      z-index: 10;
+      box-shadow: 0 0 0 3px var(--primary-color);
+    }
+
+    .timeline-content {
+      width: 45%;
+      padding: 25px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      border-left: 4px solid var(--primary-color);
+      transition: all 0.3s ease;
+    }
+
+    .timeline-content:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      transform: translateY(-5px);
+    }
+
+    .timeline-content.left {
+      margin-left: 0;
+      margin-right: auto;
+      text-align: right;
+      border-left: 4px solid var(--primary-color);
+    }
+
+    .timeline-content.right {
+      margin-left: auto;
+      margin-right: 0;
+      text-align: left;
+      border-left: 4px solid var(--primary-color);
+    }
+
+    .timeline-date {
+      display: inline-block;
+      background-color: rgba(37, 99, 235, 0.1);
+      color: var(--primary-color);
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .timeline-content h3 {
+      font-size: 1.3rem;
+      color: var(--dark-color);
+      margin: 10px 0;
+    }
+
+    .timeline-school {
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+
+    .timeline-details {
+      color: var(--gray-color);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .timeline-details p {
+      margin-bottom: 8px;
+    }
+
+    .timeline-details strong {
+      color: var(--dark-color);
+    }
+
+    /* Responsive Timeline */
+    @media screen and (max-width: 768px) {
+      .timeline::before {
+        left: 20px;
+      }
+
+      .timeline-marker {
+        left: 20px;
+      }
+
+      .timeline-content {
+        width: calc(100% - 60px);
+        margin-left: 60px !important;
+        text-align: left !important;
+      }
+
+      .timeline-content.left,
+      .timeline-content.right {
+        margin-left: 60px !important;
+        margin-right: 0 !important;
+        text-align: left !important;
+      }
+    }
+
     /* Experiences Section */
     .experiences-container {
       display: grid;
@@ -799,6 +925,56 @@
 
     .experience-list strong {
       color: var(--dark-color);
+    }
+
+    /* Interests Section */
+    .interests-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .interest-item {
+      background-color: white;
+      padding: 35px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      border-top: 4px solid var(--primary-color);
+    }
+
+    .interest-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .interest-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(37, 99, 235, 0.05));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 2.5rem;
+    }
+
+    .interest-icon i {
+      color: var(--primary-color);
+    }
+
+    .interest-item h3 {
+      font-size: 1.3rem;
+      color: var(--dark-color);
+      margin-bottom: 15px;
+    }
+
+    .interest-item p {
+      color: var(--gray-color);
+      line-height: 1.7;
+      font-size: 0.95rem;
     }
 
     /* Animation */
