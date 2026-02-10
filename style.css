@@ -649,6 +649,158 @@
       color: #94a3b8;
     }
 
+    /* Education Section */
+    .education-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+    }
+
+    .education-item {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      border-left: 4px solid var(--primary-color);
+      transition: all 0.3s ease;
+    }
+
+    .education-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .education-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 15px;
+      gap: 20px;
+    }
+
+    .education-header h3 {
+      font-size: 1.4rem;
+      color: var(--dark-color);
+      flex: 1;
+    }
+
+    .education-period {
+      background-color: rgba(37, 99, 235, 0.1);
+      color: var(--primary-color);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .education-school {
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+
+    .education-details {
+      color: var(--gray-color);
+      line-height: 1.8;
+    }
+
+    .education-details p {
+      margin-bottom: 12px;
+    }
+
+    .education-details strong {
+      color: var(--dark-color);
+    }
+
+    .education-list {
+      list-style-position: inside;
+      margin-top: 10px;
+      margin-left: 15px;
+    }
+
+    .education-list li {
+      margin-bottom: 8px;
+      color: var(--gray-color);
+    }
+
+    /* Experiences Section */
+    .experiences-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+    }
+
+    .experience-item {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      border-left: 4px solid var(--primary-color);
+      transition: all 0.3s ease;
+    }
+
+    .experience-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 15px;
+      gap: 20px;
+    }
+
+    .experience-header h3 {
+      font-size: 1.4rem;
+      color: var(--dark-color);
+      flex: 1;
+    }
+
+    .experience-period {
+      background-color: rgba(37, 99, 235, 0.1);
+      color: var(--primary-color);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .experience-company {
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+
+    .experience-list {
+      list-style: none;
+      color: var(--gray-color);
+      line-height: 1.8;
+    }
+
+    .experience-list li {
+      margin-bottom: 15px;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    .experience-list li:before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: var(--primary-color);
+      font-size: 1.2rem;
+    }
+
+    .experience-list strong {
+      color: var(--dark-color);
+    }
+
     /* Animation */
     @keyframes fadeIn {
       from {
