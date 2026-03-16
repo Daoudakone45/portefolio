@@ -38,7 +38,7 @@
     <div class="container">
       <div class="hero-content fade-in">
         <h1>Bonjour, je suis <span style="color: var(--primary-color);">Daouda KONE</span></h1>
-        <p>Développeur Web et Logiciel | Designer | Créateur</p>
+        <p>Etudiant en 3ème année de Bachelor Universitaire de Technologie Informatique</p>
         <div class="hero-btns">
           <a href="#projets" class="btn">Voir Portfolio</a>
           <a href="#contact" class="btn btn-outline">Me Contacter</a>
@@ -174,20 +174,6 @@
 
         <div class="experience-item">
           <div class="experience-header">
-            <h3>Analyse de données des étudiants</h3>
-            <span class="experience-period">Février 2024 - Mai 2024</span>
-          </div>
-          <p class="experience-company">Université de Lille - Projet académique</p>
-          <ul class="experience-list">
-            <li><strong>Collecte et stockage de données</strong> selon standards académiques</li>
-            <li><strong>Exploration et analyse :</strong> Python, NumPy, Pandas pour l'analyse statistique</li>
-            <li><strong>Visualisations :</strong> Reporting sur le cycle de l'étudiant avec matplotlib.pyplot</li>
-            <li><strong>Recommandations stratégiques :</strong> Rédaction de recommandations à destination du président de l'université</li>
-          </ul>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header">
             <h3>Employé Polyvalent - Job Étudiant</h3>
             <span class="experience-period">2021 - 2024</span>
           </div>
@@ -210,64 +196,172 @@
         <h2>Mes projets</h2>
         <p>Découvrez mes derniers projets</p>
       </div>
+
       <div class="portfolio-filter">
-        <button class="filter-btn active">Tous</button>
-        <button class="filter-btn">Sites Web</button>
-        <button class="filter-btn">Applications</button>
-        <button class="filter-btn">Design</button>
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="pro">Projets Professionnels et Académiques</button>
+        <button class="filter-btn" data-filter="perso">Projets Personnels</button>
       </div>
+
       <div class="portfolio-grid">
-        <div class="portfolio-item">
-          <img src="image/colombo.png" alt="Projet 1" class="portfolio-img">
+        <article class="portfolio-item" data-category="pro">
+          <h3 class="portfolio-title">Colombo</h3>
+          <img src="image/colombo.png" alt="Projet Colombo" class="portfolio-img">
           <div class="portfolio-overlay">
-            <h3>Colombo</h3>
-            <p>Developper et maintenir un logiciel de diagnostic des machines d'imagerie dentaire pour une entreprise de santé.</p>
-            <a href="#" class="btn">Voir le projet</a>
+            <p>Développer et maintenir un logiciel de diagnostic des machines d'imagerie dentaire.</p>
+            <button type="button" class="btn open-project-popup">Voir ce que j'ai appris</button>
           </div>
-        </div>
-        <div class="portfolio-item">
-          <img src="image/splendor.jpg" alt="Projet 2" class="portfolio-img">
+          <div class="project-details" hidden>
+            <h4>Ce que j'ai appris</h4>
+            <ul>
+              <li>Conception et maintenance d'un logiciel métier en environnement santé.</li>
+              <li>Développement d'API REST avec Django/Flask.</li>
+              <li>Optimisation SQL et amélioration des performances.</li>
+              <li>Création d'interfaces Python (Tkinter, PyQt, DearPyGui, Qt), création de widgets (fenêtres, boutons, sliders, menus), optimisation de la fluidité</li>
+              <li>Automatisation avec Python, Bash et PowerShell.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="portfolio-item" data-category="pro">
+          <h3 class="portfolio-title">Splendor</h3>
+          <img src="image/splendor.jpg" alt="Projet Splendor" class="portfolio-img">
           <div class="portfolio-overlay">
-            <h3>Splendor</h3>
-            <p>Developper une aplication pour le jeu splendor en respectant les règles et les mécaniques du jeu.</p>
-            <a href="#" class="btn">Voir le projet</a>
+            <p>Développer une application du jeu Splendor en respectant ses règles et mécaniques.</p>
+            <button type="button" class="btn open-project-popup">Voir ce que j'ai appris</button>
           </div>
-        </div>
-        <div class="portfolio-item">
-          <img src="image/taquin.png" alt="Projet 3" class="portfolio-img">
+          <div class="project-details" hidden>
+            <h4>Ce que j'ai appris</h4>
+            <ul>
+              <li><strong>Programmation orientée objet :</strong> modélisation d’entités claires comme <code>Player</code>, <code>Card</code>, <code>Noble</code>, <code>Board</code> et <code>TokenList</code>, avec encapsulation et responsabilités bien définies.</li>
+              <li><strong>Architecture propre :</strong> séparation <code>model / view / controller</code> pour distinguer la logique métier, l’affichage et les actions utilisateur.</li>
+              <li><strong>Moteur de jeu :</strong> formalisation des règles, gestion des tours, des états de partie et validation des actions possibles.</li>
+              <li><strong>Polymorphisme et conception orientée actions :</strong> mise en place de classes comme <code>BuyCardAction</code>, <code>ReserveCardAction</code> et <code>TakeThreeTokens</code>, dans une approche proche du pattern Command.</li>
+              <li><strong>Gestion de l’état et des contraintes :</strong> prise en compte des règles du jeu (jetons, coûts, réservations, nobles, score) et prévention des coups invalides.</li>
+              <li><strong>Double interface :</strong> adaptation de la même logique métier à une interface terminal et une interface graphique sans duplication du code.</li>
+              <li><strong>Organisation d’un projet Java :</strong> structuration en packages, gestion des ressources (images, cartes, nobles, jetons) et intégration de dépendances.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="portfolio-item" data-category="pro">
+          <h3 class="portfolio-title">Taquin</h3>
+          <img src="image/taquin.png" alt="Projet Taquin" class="portfolio-img">
           <div class="portfolio-overlay">
-            <h3>Taquin</h3>
-            <p>Reconception d'un jeu classique en ligne avec des graphismes modernes et une jouabilité améliorée dans le langage de programmation C</p>
-            <a href="#" class="btn">Voir le projet</a>
+            <p>Reconcevoir un jeu classique avec une jouabilité moderne en langage C.</p>
+            <button type="button" class="btn open-project-popup">Voir ce que j'ai appris</button>
           </div>
-        </div>
-        <div class="portfolio-item">
-          <img src="/api/placeholder/400/400" alt="Projet 4" class="portfolio-img">
+          <div class="project-details" hidden>
+            <h4>Ce que j'ai appris</h4>
+            <ul>
+              <li>Structuration d'un projet en C et gestion de la mémoire.</li>
+              <li>Conception d'algorithmes de déplacement et de vérification des états.</li>
+              <li>Amélioration des graphismes et de l'ergonomie de jeu.</li>
+              <li>Débogage et tests sur les cas limites.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="portfolio-item" data-category="pro">
+          <h3 class="portfolio-title">Aryform</h3>
+          <img src="image/aryform.png" alt="Projet Aryform" class="portfolio-img">
           <div class="portfolio-overlay">
-            <h3>Design UI/UX</h3>
-            <p>Conception de l'interface utilisateur pour une application de fitness.</p>
-            <a href="#" class="btn">Voir le projet</a>
+            <p>Application web de génération de formulaires dynamiques, collecte de réponses et tableau de bord d’analyse, avec intégration à des systèmes tiers comme Prestashop.</p>
+            <button type="button" class="btn open-project-popup">Voir ce que j'ai appris</button>
           </div>
-        </div>
-        <div class="portfolio-item">
-          <img src="/api/placeholder/400/400" alt="Projet 5" class="portfolio-img">
+          <div class="project-details" hidden>
+            <h4>Ce que j'ai appris</h4>
+            <ul>
+              <li><strong>Architecture full-stack :</strong> conception client-serveur avec SvelteKit, séparation frontend/backend/API/BDD.</li>
+              <li><strong>Base de données :</strong> intégration PostgreSQL via Supabase, architecture multi-tenant et isolement des organisations.</li>
+              <li><strong>Frontend moderne :</strong> Svelte 5 (runes), TailwindCSS 4, Svelte Flow, svelte-grid-5-ts et LayerChart.</li>
+              <li><strong>Gestion de données complexe :</strong> variables typées, interpolation, validation de graphes acycliques et prévention des branchements invalides.</li>
+              <li><strong>Authentification & sécurité :</strong> Supabase Auth, jetons d’invitation admin, RLS et middleware de contrôle d’accès.</li>
+              <li><strong>APIs & intégrations :</strong> endpoints REST, form actions SvelteKit, intégration email et cycle complet création → envoi → réponse → analyse.</li>
+              <li><strong>Traitement email & PII :</strong> parsing automatique, anonymisation avec Microsoft Presidio, microservices Docker.</li>
+              <li><strong>DevOps & déploiement :</strong> Docker multi-stage, docker-compose, déploiement cloud (Railway, Render, Fly.io), gestion des variables d’environnement.</li>
+              <li><strong>Qualité logicielle :</strong> TypeScript end-to-end, tests unitaires Vitest, architecture modulaire, conventions Git et documentation technique.</li>
+              <li><strong>UX avancée :</strong> toasts temps réel, modales, menus contextuels, aperçu live du formulaire, auto-layout des graphes avec ELK.js.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="portfolio-item" data-category="pro">
+          <h3 class="portfolio-title">Analyse de données des étudiants</h3>
+          <img src="image/arrondis_numpy.png" alt="Projet Analyse de données des étudiants" class="portfolio-img">
           <div class="portfolio-overlay">
-            <h3>Site Vitrine</h3>
-            <p>Création d'un site vitrine élégant pour un restaurant haut de gamme.</p>
-            <a href="#" class="btn">Voir le projet</a>
+            <p>Projet académique d’analyse statistique du cycle étudiant avec collecte, traitement et visualisation de données.</p>
+            <button type="button" class="btn open-project-popup">Voir ce que j'ai appris</button>
           </div>
-        </div>
-        <div class="portfolio-item">
-          <img src="/api/placeholder/400/400" alt="Projet 6" class="portfolio-img">
+          <div class="project-details" hidden>
+            <h4>Ce que j'ai appris</h4>
+            <ul>
+              <li><strong>Collecte et structuration de données :</strong> intégration de sources variées (CSV/Excel, bases scolaires, questionnaires, logs LMS comme Moodle), respect RGPD/éthique, anonymisation, documentation des variables et métadonnées.</li>
+              <li><strong>Analyse statistique avec Python, NumPy et Pandas :</strong> statistiques descriptives (moyenne, médiane, écart-type, quartiles, skewness, kurtosis), analyses bivariées/multivariées, corrélations (Pearson, Spearman), tests (t-test, ANOVA, chi-carré), régression linéaire/logistique, détection d’outliers, gestion des valeurs manquantes (imputation/suppression).</li>
+              <li><strong>Visualisation et reporting avec Matplotlib :</strong> histogrammes, boxplots, scatterplots, heatmaps de corrélation, barplots groupés/stacked, line charts temporels (avec possibilité d’extension vers Seaborn et Plotly).</li>
+              <li><strong>Recommandations orientées décision :</strong> transformation des insights en actions concrètes (ex. identification du risque d’échec lié à l’assiduité et proposition de tutorat ciblé).</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="portfolio-item" data-category="pro">
+          <h3 class="portfolio-title">VRP-Solver</h3>
+          <img src="image/VRP-Solver.png" alt="Projet VRP-Solver" class="portfolio-img">
           <div class="portfolio-overlay">
-            <h3>Application Web</h3>
-            <p>Développement d'une application web de gestion de projet pour une agence.</p>
-            <a href="#" class="btn">Voir le projet</a>
+          <p>Optimisation de tournées de livraison pharmaceutique en Python et C, avec algorithme génétique, contrainte de 3h par tournée et génération d’un rapport PDF avec horaires et carte des trajets.</p>
+            <button type="button" class="btn open-project-popup">Voir ce que j'ai appris</button>
           </div>
-        </div>
+          <div class="project-details" hidden>
+            <h4>Ce que j'ai appris</h4>
+            <ul>
+              <li><strong>Algorithmique & C :</strong> implémentation d’un algorithme génétique en C pur (population, sélection élitiste, mutation, croisements), avec optimisation locale 2-opt pour affiner les tournées.</li>
+              <li><strong>Gestion des contraintes :</strong> segmentation des routes avec respect d’une limite de 180 minutes par camion, incluant une re-segmentation récursive si nécessaire.</li>
+              <li><strong>Mémoire en C :</strong> utilisation de <code>malloc</code>, <code>memcpy</code> et <code>free</code> pour gérer la mémoire dynamique.</li>
+              <li><strong>Python & interopérabilité :</strong> orchestration d’un pipeline bout-en-bout en Python, exécution d’un binaire C via <code>subprocess</code>, parsing de la sortie standard et compilation via Makefile.</li>
+              <li><strong>Données & APIs :</strong> appel à l’API OpenRouteService pour calculer des matrices réelles distance/temps, gestion des limites de requêtes par blocs, manipulation de CSV avec <code>pandas</code> et jointures de données.</li>
+              <li><strong>Génération de rapports :</strong> création de PDF structurés avec <code>fpdf2</code>, construction d’un JSON intermédiaire de trajets, cartographie avec <code>geopandas</code>, <code>matplotlib</code> et <code>contextily</code>.</li>
+              <li><strong>Architecture logicielle :</strong> séparation claire entre acquisition des données, optimisation, visualisation et génération de rapport, avec réutilisation d’une base locale de coordonnées pour limiter les appels API redondants.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="portfolio-item" data-category="perso">
+          <h3 class="portfolio-title">Jospia</h3>
+          <img src="image/jospia.png" alt="Projet Jospia" class="portfolio-img">
+          <div class="portfolio-overlay">
+            <p>Application web de gestion des inscriptions et paiements pour un événement d'une association organisant des séminaires.</p>
+            <button type="button" class="btn open-project-popup">Voir ce que j'ai appris</button>
+          </div>
+          <div class="project-details" hidden>
+            <h4>Ce que j'ai appris</h4>
+            <ul>
+              <li><strong>Architecture full-stack :</strong> séparation frontend (React/TypeScript + Vite + Tailwind) et backend (Node.js/Express), organisation en couches (controllers, services, routes, middleware).</li>
+              <li><strong>Base de données :</strong> Supabase/PostgreSQL, création de tables, index, politiques RLS, migrations SQL progressives et numérotées.</li>
+              <li><strong>Sécurité :</strong> authentification avec rôles (admin/user) et sécurisation des routes via middleware.</li>
+              <li><strong>Paiement en ligne :</strong> intégration PayDunya, gestion des flux, callbacks et redirections.</li>
+              <li><strong>Frontend :</strong> gestion d’état global (store), routing, composants réutilisables, appels API backend.</li>
+              <li><strong>Fonctionnalités métier :</strong> gestion des inscriptions, numéros de tickets, export Excel, génération de PDF (reçus).</li>
+              <li><strong>Debug & qualité :</strong> résolution de bugs complexes (RLS, slots de dortoirs, auth), tests manuels et scripts de diagnostic.</li>
+              <li><strong>Compétences transversales :</strong> documentation technique, pilotage de projet de A à Z, résolution d’incidents de production.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Tu peux garder tes autres projets sur le même modèle -->
       </div>
+
+      <p id="portfolioEmpty" hidden>Aucun projet dans cette catégorie pour le moment.</p>
     </div>
   </section>
+
+  <!-- Popup Projet -->
+  <div id="projectPopup" class="project-popup" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="project-popup-content">
+      <button type="button" class="project-popup-close" aria-label="Fermer">×</button>
+      <h3 id="projectPopupTitle"></h3>
+      <div id="projectPopupBody"></div>
+    </div>
+  </div>
 
   <!-- Interests Section -->
   <section id="interests">
@@ -363,6 +457,16 @@
                   </a>
                 </div>
               </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-file-download"></i>
+                </div>
+                <div class="contact-text">
+                  <a href="document/cv Master.pdf" download style="color: var(--primary-color); text-decoration: none;">
+                  Télécharger mon CV
+                  </a>
+                </div>
+              </div>
             </div>
             <div class="social-links" style="margin-top: 30px;">
               <a href="https://github.com/Daoudakone45"><i class="fab fa-github"></i></a>
@@ -439,6 +543,91 @@
             if (btn) btn.disabled = false;
           });
       });
+    })();
+
+    // Popup projets
+    (function () {
+      const popup = document.getElementById('projectPopup');
+      const popupTitle = document.getElementById('projectPopupTitle');
+      const popupBody = document.getElementById('projectPopupBody');
+      const closeBtn = popup?.querySelector('.project-popup-close');
+      const openButtons = document.querySelectorAll('.open-project-popup');
+
+      if (!popup || !popupTitle || !popupBody || !closeBtn || !openButtons.length) return;
+
+      const openPopup = (item) => {
+        const title =
+          item.querySelector('.portfolio-title')?.textContent?.trim() ||
+          item.querySelector('.portfolio-overlay h3')?.textContent?.trim() ||
+          'Projet';
+
+        const details = item.querySelector('.project-details');
+
+        popupTitle.textContent = title;
+        popupBody.innerHTML = details ? details.innerHTML : '<p>Aucun détail disponible.</p>';
+
+        popup.classList.add('show');
+        popup.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      };
+
+      const closePopup = () => {
+        popup.classList.remove('show');
+        popup.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      };
+
+      openButtons.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          const item = e.target.closest('.portfolio-item');
+          if (item) openPopup(item);
+        });
+      });
+
+      closeBtn.addEventListener('click', closePopup);
+
+      popup.addEventListener('click', (e) => {
+        if (e.target === popup) closePopup();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && popup.classList.contains('show')) closePopup();
+      });
+    })();
+
+    // Filtre des projets (Tous / Pro / Perso)
+    (function () {
+      const filterButtons = document.querySelectorAll('.portfolio-filter .filter-btn');
+      const items = document.querySelectorAll('.portfolio-grid .portfolio-item');
+      const emptyState = document.getElementById('portfolioEmpty');
+
+      if (!filterButtons.length || !items.length) return;
+
+      const applyFilter = (filter) => {
+        let visibleCount = 0;
+
+        items.forEach((item) => {
+          const category = item.dataset.category || '';
+          const shouldShow = filter === 'all' || category === filter;
+          item.style.display = shouldShow ? '' : 'none';
+          if (shouldShow) visibleCount++;
+        });
+
+        if (emptyState) {
+          emptyState.hidden = visibleCount !== 0;
+        }
+      };
+
+      filterButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          filterButtons.forEach((b) => b.classList.remove('active'));
+          btn.classList.add('active');
+          applyFilter(btn.dataset.filter || 'all');
+        });
+      });
+
+      // état initial
+      applyFilter('all');
     })();
   </script>
 </body>
