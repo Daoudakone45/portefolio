@@ -946,18 +946,48 @@
     }
 
     .interest-item {
-      background-color: white;
-      padding: 35px;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s ease;
-      border-top: 4px solid var(--primary-color);
+      min-height: 260px;
+      perspective: 1000px;
     }
 
-    .interest-item:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    .interest-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .interest-item:hover .interest-card-inner,
+    .interest-item:focus-within .interest-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .interest-face {
+      position: absolute;
+      inset: 0;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      border-top: 4px solid var(--primary-color);
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    .interest-front {
+      transform: rotateY(0deg);
+    }
+
+    .interest-back {
+      transform: rotateY(180deg);
+      background: linear-gradient(145deg, #f8fafc, #eef4ff);
     }
 
     .interest-icon {
@@ -986,6 +1016,7 @@
       color: var(--gray-color);
       line-height: 1.7;
       font-size: 0.95rem;
+      margin: 0;
     }
 
     /* Animation */
