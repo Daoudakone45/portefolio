@@ -1,744 +1,561 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Daouda Kone</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Daouda Kone - Développeur Web</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        * { font-family: 'Poppins', sans-serif; }
+        .gradient-primary { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .gradient-dark { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15); }
+        .smooth-scroll { scroll-behavior: smooth; }
+        .fade-in { animation: fadeIn 0.8s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .progress-bar { background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); }
+    </style>
 </head>
-<body>
-     <!-- Header -->
-  <header>
-    <div class="container">
-      <nav>
-        <a href="#" class="logo">Port<span>folio</span></a>
-        <ul class="nav-links">
-          <li><a href="#hero">Accueil</a></li>
-          <li><a href="#about">À propos</a></li>
-          <li><a href="#education">Formation</a></li>
-          <li><a href="#experiences">Expériences</a></li>
-          <li><a href="#competences">Compétences</a></li>
-          <li><a href="#projets">Mes Projets</a></li>
-          <li><a href="#interests">Intérêts</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="burger">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
+<body class="bg-slate-50 smooth-scroll">
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 gradient-dark text-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="#" class="text-2xl font-bold">DAK<span class="text-purple-400">.</span>dev</a>
+            
+            <!-- Menu Desktop -->
+            <div class="hidden md:flex gap-8 text-sm font-medium">
+                <a href="#accueil" class="hover:text-purple-400 transition">Accueil</a>
+                <a href="#about" class="hover:text-purple-400 transition">À propos</a>
+                <a href="#skills" class="hover:text-purple-400 transition">Compétences</a>
+                <a href="#projects" class="hover:text-purple-400 transition">Projets</a>
+                <a href="#experience" class="hover:text-purple-400 transition">Expérience</a>
+                <a href="#contact" class="hover:text-purple-400 transition">Contact</a>
+            </div>
+
+            <!-- Menu Mobile -->
+            <button id="menu-toggle" class="md:hidden text-2xl" aria-label="Ouvrir le menu" title="Ouvrir le menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-      </nav>
-    </div>
-  </header>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 px-4 pb-4 space-y-2 text-sm">
+            <a href="#accueil" class="block py-2 hover:text-purple-400">Accueil</a>
+            <a href="#about" class="block py-2 hover:text-purple-400">À propos</a>
+            <a href="#skills" class="block py-2 hover:text-purple-400">Compétences</a>
+            <a href="#projects" class="block py-2 hover:text-purple-400">Projets</a>
+            <a href="#experience" class="block py-2 hover:text-purple-400">Expérience</a>
+            <a href="#contact" class="block py-2 hover:text-purple-400">Contact</a>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
-  <section id="hero">
-    <div class="hero-bg"></div>
-    <div class="container">
-      <div class="hero-content fade-in">
-        <h1>Bonjour, bienvenue sur mon <span style="color: var(--primary-color);">Portfolio</span></h1>
-        <div class="hero-btns">
-          <a href="#projets" class="btn">Voir Mes Projets</a>
-          <a href="#contact" class="btn btn-outline">Me Contacter</a>
+    <section id="accueil" class="min-h-screen gradient-dark text-white flex items-center pt-20">
+        <div class="max-w-6xl mx-auto px-4 w-full">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-4">Développeur <br><span class="text-purple-400">Full Stack</span></h1>
+                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">Étudiant en Informatique passionné par la création d'applications web modernes, scalables et performantes. Spécialisé en JavaScript, React et Node.js.</p>
+                    <div class="flex gap-4">
+                        <a href="#projects" class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition">Voir mes projets</a>
+                        <a href="#contact" class="border-2 border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white px-8 py-3 rounded-lg font-semibold transition">Me contacter</a>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="w-64 h-64 mx-auto bg-gradient-to-br from-purple-400 to-purple-600 rounded-full overflow-hidden shadow-2xl">
+                        <img src="image/PhotoPro2.jpg" alt="Photo de profil" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
     <!-- About Section -->
-  <section id="about">
-    <div class="container">
-      <div class="section-title">
-        <h2>À Propos</h2>
-        <p>Découvrez mon parcours et mes compétences</p>
-      </div>
-      <div class="about-content">
-        <div class="about-img">
-          <img src="image/PhotoPro2.jpg" alt="Photo de profil">
-        </div>
-        <div class="about-text">
-          <h3>Qui suis-je ?</h3>
-          <p>Actuellement en BUT 3 Informatique à l'Université Gustave Eiffel, je suis un étudiant passionné par le génie logiciel et le développement d'applications robustes. Mon parcours académique m'a permis d'affiner mes intérêts et de cibler les compétences que je souhaite renforcer.</p>
-          
-          <p><strong>Projet Professionnel :</strong>Mon objectif est de devenir un ingénieur logiciel compétent, capable de concevoir et développer des solutions logicielles de qualité, tout en maîtrisant les bonnes pratiques du génie logiciel et les méthodologies de développement modernes.</p>
-          <p><strong>Projet Academique :</strong> Je souhaite intégrer un Master Logiciel en alternance pour poursuivre ma montée en compétences dans un cadre académique et professionnel cohérent avec mes objectifs. Cette formation me permettra d'approfondir mes connaissances en architecture logicielle, gestion de projets et technologies avancées, tout en acquérant une expérience pratique en entreprise.</p>
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">À Propos de Moi</h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto rounded-full"></div>
+            </div>
 
-          <h4 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary-color);">Compétences Techniques</h4>
-          <div class="skills">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Java</span>
-            <span class="skill-tag">C / C++</span>
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">React</span>
-            <span class="skill-tag">Django</span>
-            <span class="skill-tag">Flask</span>
-            <span class="skill-tag">Node.js</span>
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">Algorithmes</span>
-            <span class="skill-tag">Génie Logiciel</span>
-            <span class="skill-tag">Bases de Données</span>
-            <span class="skill-tag">Architecture Logicielle</span>
-          </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Qui suis-je ?</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">Actuellement en BUT 3 Informatique à l'Université Gustave Eiffel, je suis un développeur passionné par la création d'expériences web de qualité. Mon parcours m'a permis de maîtriser les technologies modernes du web.</p>
+                    
+                    <h4 class="text-xl font-bold text-slate-900 mt-6 mb-3">Objectif Professionnel</h4>
+                    <p class="text-gray-600 leading-relaxed">Devenir un développeur web senior capable de concevoir et déployer des applications scalables, en maîtrisant l'architecture frontend/backend et les bonnes pratiques de développement.</p>
+                    
+                    <h4 class="text-xl font-bold text-slate-900 mt-6 mb-3">Formation Visée</h4>
+                    <p class="text-gray-600 leading-relaxed">Master Développement Logiciel en alternance pour approfondir mes connaissances en architecture web, DevOps et leadership technique.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="text-center p-6 bg-slate-50 rounded-lg">
+                        <div class="text-4xl font-bold text-purple-600 mb-2">5+</div>
+                        <p class="text-gray-600">Projets complétés</p>
+                    </div>
+                    <div class="text-center p-6 bg-slate-50 rounded-lg">
+                        <div class="text-4xl font-bold text-purple-600 mb-2">2</div>
+                        <p class="text-gray-600">Années d'expérience</p>
+                    </div>
+                    <div class="text-center p-6 bg-slate-50 rounded-lg">
+                        <div class="text-4xl font-bold text-purple-600 mb-2">15+</div>
+                        <p class="text-gray-600">Technologies maîtrisées</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Compétences</h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Frontend -->
+                <div class="bg-slate-800 p-8 rounded-lg card-hover">
+                    <div class="text-4xl text-purple-400 mb-4"><i class="fas fa-code"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Frontend</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span>React & Vue.js</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2"><div class="progress-bar h-2 rounded-full" style="width: 90%;"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span>Tailwind CSS</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2"><div class="progress-bar h-2 rounded-full" style="width: 95%;"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span>JavaScript ES6+</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2"><div class="progress-bar h-2 rounded-full" style="width: 85%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="bg-slate-800 p-8 rounded-lg card-hover">
+                    <div class="text-4xl text-purple-400 mb-4"><i class="fas fa-server"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Backend</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span>Node.js & Express</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2"><div class="progress-bar h-2 rounded-full" style="width: 85%;"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span>Python & Django</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2"><div class="progress-bar h-2 rounded-full" style="width: 80%;"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span>PostgreSQL / MongoDB</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2"><div class="progress-bar h-2 rounded-full" style="width: 80%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & DevOps -->
+                <div class="bg-slate-800 p-8 rounded-lg card-hover">
+                    <div class="text-4xl text-purple-400 mb-4"><i class="fas fa-tools"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Outils & DevOps</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span>Git & GitHub</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2"><div class="progress-bar h-2 rounded-full" style="width: 90%;"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span>Docker & DockerCompose</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2"><div class="progress-bar h-2 rounded-full" style="width: 75%;"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span>Linux & Bash</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2"><div class="progress-bar h-2 rounded-full" style="width: 80%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech Stack Tags -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold mb-8 text-center">Stack Technologique</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="bg-purple-600 px-4 py-2 rounded-full text-sm font-semibold">JavaScript</span>
+                    <span class="bg-purple-600 px-4 py-2 rounded-full text-sm font-semibold">React</span>
+                    <span class="bg-purple-600 px-4 py-2 rounded-full text-sm font-semibold">Node.js</span>
+                    <span class="bg-purple-600 px-4 py-2 rounded-full text-sm font-semibold">Express</span>
+                    <span class="bg-purple-600 px-4 py-2 rounded-full text-sm font-semibold">PostgreSQL</span>
+                    <span class="bg-purple-600 px-4 py-2 rounded-full text-sm font-semibold">MongoDB</span>
+                    <span class="bg-purple-600 px-4 py-2 rounded-full text-sm font-semibold">Tailwind CSS</span>
+                    <span class="bg-purple-600 px-4 py-2 rounded-full text-sm font-semibold">Docker</span>
+                    <span class="bg-purple-600 px-4 py-2 rounded-full text-sm font-semibold">Git</span>
+                    <span class="bg-purple-600 px-4 py-2 rounded-full text-sm font-semibold">Python</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">Mes Projets</h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-3 mb-10" id="portfolio-filters">
+                <button class="filter-btn active px-4 py-2 rounded-full bg-purple-600 text-white text-sm font-semibold" data-filter="all">Tous</button>
+                <button class="filter-btn px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm font-semibold" data-filter="pro">Projets Professionnels et Académiques</button>
+                <button class="filter-btn px-4 py-2 rounded-full bg-slate-100 text-slate-700 text-sm font-semibold" data-filter="perso">Projets Personnels</button>
+            </div>
+
+            <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8" id="portfolio-grid">
+                <article class="project-card bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm card-hover" data-category="pro">
+                    <img src="image/colombo.png" alt="Projet Colombo" class="w-full h-44 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Colombo</h3>
+                        <p class="text-gray-600 text-sm mb-4">Développer et maintenir un logiciel de diagnostic des machines d'imagerie dentaire.</p>
+                        <div class="flex gap-2">
+                            <button type="button" class="open-project-popup px-4 py-2 rounded-lg bg-purple-600 text-white text-sm font-semibold hover:bg-purple-700 transition">Voir ce que j'ai appris</button>
+                        </div>
+                        <div class="project-details hidden">
+                            <h4 class="text-lg font-bold text-slate-900 mb-3">Ce que j'ai appris</h4>
+                            <ul class="list-disc pl-5 space-y-2 text-sm text-slate-700">
+                                <li>Conception et maintenance d'un logiciel metier en environnement sante.</li>
+                                <li>Developpement d'API REST avec Django/Flask.</li>
+                                <li>Optimisation SQL et amelioration des performances.</li>
+                                <li>Creation d'interfaces Python (Tkinter, PyQt, DearPyGui, Qt), creation de widgets (fenetres, boutons, sliders, menus), optimisation de la fluidite.</li>
+                                <li>Automatisation avec Python, Bash et PowerShell.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm card-hover" data-category="pro">
+                    <img src="image/splendor.jpg" alt="Projet Splendor" class="w-full h-44 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Splendor</h3>
+                        <p class="text-gray-600 text-sm mb-4">Developper une application du jeu Splendor en respectant ses regles et mecaniques.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <button type="button" class="open-project-popup px-4 py-2 rounded-lg bg-purple-600 text-white text-sm font-semibold hover:bg-purple-700 transition">Voir ce que j'ai appris</button>
+                            <a href="https://github.com/MaximeCaillaud/JavaSplendor" class="px-4 py-2 rounded-lg border border-purple-600 text-purple-700 text-sm font-semibold hover:bg-purple-50 transition" target="_blank" rel="noopener noreferrer">Voir le code GitHub</a>
+                        </div>
+                        <div class="project-details hidden">
+                            <h4 class="text-lg font-bold text-slate-900 mb-3">Ce que j'ai appris</h4>
+                            <ul class="list-disc pl-5 space-y-2 text-sm text-slate-700">
+                                <li>Programmation orientee objet: modelisation d'entites claires comme Player, Card, Noble, Board et TokenList.</li>
+                                <li>Architecture propre: separation model / view / controller.</li>
+                                <li>Moteur de jeu: formalisation des regles et validation des actions possibles.</li>
+                                <li>Polymorphisme et conception orientee actions avec BuyCardAction, ReserveCardAction et TakeThreeTokens.</li>
+                                <li>Gestion de l'etat et prevention des coups invalides.</li>
+                                <li>Double interface: terminal et graphique sans duplication du code.</li>
+                                <li>Organisation d'un projet Java: packages, ressources et dependances.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm card-hover" data-category="pro">
+                    <img src="image/taquin.png" alt="Projet Taquin" class="w-full h-44 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Taquin</h3>
+                        <p class="text-gray-600 text-sm mb-4">Reconcevoir un jeu classique avec une jouabilite moderne en langage C.</p>
+                        <button type="button" class="open-project-popup px-4 py-2 rounded-lg bg-purple-600 text-white text-sm font-semibold hover:bg-purple-700 transition">Voir ce que j'ai appris</button>
+                        <div class="project-details hidden">
+                            <h4 class="text-lg font-bold text-slate-900 mb-3">Ce que j'ai appris</h4>
+                            <ul class="list-disc pl-5 space-y-2 text-sm text-slate-700">
+                                <li>Structuration d'un projet en C et gestion de la memoire.</li>
+                                <li>Conception d'algorithmes de deplacement et de verification des etats.</li>
+                                <li>Amelioration des graphismes et de l'ergonomie de jeu.</li>
+                                <li>Debogage et tests sur les cas limites.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm card-hover" data-category="pro">
+                    <img src="image/aryform.png" alt="Projet Aryform" class="w-full h-44 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Aryform</h3>
+                        <p class="text-gray-600 text-sm mb-4">Application web de generation de formulaires dynamiques et tableau de bord d'analyse avec integration Prestashop.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <button type="button" class="open-project-popup px-4 py-2 rounded-lg bg-purple-600 text-white text-sm font-semibold hover:bg-purple-700 transition">Voir ce que j'ai appris</button>
+                            <a href="https://github.com/HayroMaki/Ary-Feedback" class="px-4 py-2 rounded-lg border border-purple-600 text-purple-700 text-sm font-semibold hover:bg-purple-50 transition" target="_blank" rel="noopener noreferrer">Voir le code GitHub</a>
+                        </div>
+                        <div class="project-details hidden">
+                            <h4 class="text-lg font-bold text-slate-900 mb-3">Ce que j'ai appris</h4>
+                            <ul class="list-disc pl-5 space-y-2 text-sm text-slate-700">
+                                <li>Architecture full-stack avec SvelteKit, separation frontend/backend/API/BDD.</li>
+                                <li>Integration PostgreSQL via Supabase, architecture multi-tenant.</li>
+                                <li>Frontend moderne avec Svelte 5, TailwindCSS 4 et outils de visualisation.</li>
+                                <li>Gestion de donnees complexe et validation de graphes acycliques.</li>
+                                <li>Authentification et securite: Supabase Auth, RLS, middleware d'acces.</li>
+                                <li>APIs et integrations email avec cycle complet creation -> envoi -> analyse.</li>
+                                <li>DevOps et deploiement Docker multi-stage, cloud Railway/Render/Fly.io.</li>
+                                <li>Qualite logicielle: TypeScript end-to-end, Vitest, architecture modulaire.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm card-hover" data-category="pro">
+                    <img src="image/arrondis_numpy.png" alt="Projet Analyse de donnees des etudiants" class="w-full h-44 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Analyse de donnees des etudiants</h3>
+                        <p class="text-gray-600 text-sm mb-4">Projet academique d'analyse statistique avec collecte, traitement et visualisation de donnees.</p>
+                        <button type="button" class="open-project-popup px-4 py-2 rounded-lg bg-purple-600 text-white text-sm font-semibold hover:bg-purple-700 transition">Voir ce que j'ai appris</button>
+                        <div class="project-details hidden">
+                            <h4 class="text-lg font-bold text-slate-900 mb-3">Ce que j'ai appris</h4>
+                            <ul class="list-disc pl-5 space-y-2 text-sm text-slate-700">
+                                <li>Collecte et structuration de donnees (CSV/Excel, bases scolaires, logs LMS).</li>
+                                <li>Analyse statistique avec Python, NumPy et Pandas (descriptif, correlations, tests).</li>
+                                <li>Visualisation et reporting avec Matplotlib (histogrammes, boxplots, heatmaps).</li>
+                                <li>Transformation des insights en recommandations orientees decision.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm card-hover" data-category="pro">
+                    <img src="image/VRP-Solver.png" alt="Projet VRP-Solver" class="w-full h-44 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">VRP-Solver</h3>
+                        <p class="text-gray-600 text-sm mb-4">Optimisation de tournees de livraison en Python et C avec algorithme genetique et generation de rapport PDF.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <button type="button" class="open-project-popup px-4 py-2 rounded-lg bg-purple-600 text-white text-sm font-semibold hover:bg-purple-700 transition">Voir ce que j'ai appris</button>
+                            <a href="https://github.com/Oceane-Luyeye/Projet-Multidisciplinaire" class="px-4 py-2 rounded-lg border border-purple-600 text-purple-700 text-sm font-semibold hover:bg-purple-50 transition" target="_blank" rel="noopener noreferrer">Voir le code GitHub</a>
+                        </div>
+                        <div class="project-details hidden">
+                            <h4 class="text-lg font-bold text-slate-900 mb-3">Ce que j'ai appris</h4>
+                            <ul class="list-disc pl-5 space-y-2 text-sm text-slate-700">
+                                <li>Implementation d'un algorithme genetique en C et optimisation locale 2-opt.</li>
+                                <li>Gestion de contraintes de tournee (180 minutes max) avec re-segmentation recursive.</li>
+                                <li>Gestion memoire dynamique en C avec malloc, memcpy et free.</li>
+                                <li>Interop Python/C via subprocess et pipeline automatise.</li>
+                                <li>Appels API OpenRouteService et manipulation CSV avec pandas.</li>
+                                <li>Generation de PDF et cartographie geopandas/matplotlib/contextily.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm card-hover" data-category="pro">
+                    <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.png" alt="Projet Jenkins" class="w-full h-44 object-contain bg-slate-50 p-4">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Jenkins</h3>
+                        <p class="text-gray-600 text-sm mb-4">Mise en place d'une integration continue avec Jenkins pour automatiser builds, tests et livraison.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <button type="button" class="open-project-popup px-4 py-2 rounded-lg bg-purple-600 text-white text-sm font-semibold hover:bg-purple-700 transition">Voir ce que j'ai appris</button>
+                            <a href="https://github.com/Daoudakone45/Jenkins" class="px-4 py-2 rounded-lg border border-purple-600 text-purple-700 text-sm font-semibold hover:bg-purple-50 transition" target="_blank" rel="noopener noreferrer">Voir le code GitHub</a>
+                        </div>
+                        <div class="project-details hidden">
+                            <h4 class="text-lg font-bold text-slate-900 mb-3">Ce que j'ai appris</h4>
+                            <ul class="list-disc pl-5 space-y-2 text-sm text-slate-700">
+                                <li>Creation de pipelines Jenkins pour automatiser build et tests.</li>
+                                <li>Detection precoce des erreurs avec execution automatique des tests.</li>
+                                <li>Orchestration de taches repetitives pour fiabiliser le cycle de developpement.</li>
+                                <li>Standardisation des processus de livraison pour l'equipe.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm card-hover" data-category="perso">
+                    <img src="image/jospia.png" alt="Projet Jospia" class="w-full h-44 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Jospia</h3>
+                        <p class="text-gray-600 text-sm mb-4">Application web de gestion des inscriptions et paiements pour un evenement associatif.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <button type="button" class="open-project-popup px-4 py-2 rounded-lg bg-purple-600 text-white text-sm font-semibold hover:bg-purple-700 transition">Voir ce que j'ai appris</button>
+                            <a href="https://github.com/Daoudakone45/jospia" class="px-4 py-2 rounded-lg border border-purple-600 text-purple-700 text-sm font-semibold hover:bg-purple-50 transition" target="_blank" rel="noopener noreferrer">Voir le code GitHub</a>
+                        </div>
+                        <div class="project-details hidden">
+                            <h4 class="text-lg font-bold text-slate-900 mb-3">Ce que j'ai appris</h4>
+                            <ul class="list-disc pl-5 space-y-2 text-sm text-slate-700">
+                                <li>Architecture full-stack: React/TypeScript + Vite + Tailwind et backend Node.js/Express.</li>
+                                <li>Supabase/PostgreSQL avec RLS, migrations SQL progressives et index.</li>
+                                <li>Securite: authentification a roles et protection des routes.</li>
+                                <li>Integration paiement PayDunya, callbacks et redirections.</li>
+                                <li>Fonctionnalites metier: tickets, export Excel, generation PDF.</li>
+                                <li>Resolution de bugs complexes et pilotage de projet de A a Z.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="https://github.com/Daoudakone45" target="_blank" rel="noopener noreferrer" class="inline-block bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition">
+                    Voir tous mes projets sur GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div id="project-modal" class="fixed inset-0 z-[999] hidden">
+        <div class="absolute inset-0 bg-slate-950/70" id="project-modal-backdrop"></div>
+        <div class="relative max-w-3xl mx-auto mt-20 bg-white rounded-xl shadow-2xl p-6 md:p-8 max-h-[80vh] overflow-y-auto">
+            <div class="flex items-start justify-between gap-4 mb-5">
+                <h3 id="project-modal-title" class="text-2xl font-bold text-slate-900"></h3>
+                <button type="button" id="project-modal-close" class="text-slate-500 hover:text-slate-800 text-2xl leading-none">&times;</button>
+            </div>
+            <div id="project-modal-content" class="text-slate-700"></div>
+        </div>
     </div>
-  </section>
 
-  <!-- Education Section -->
-  <section id="education">
-    <div class="container">
-      <div class="section-title">
-        <h2>Formation</h2>
-        <p>Mon parcours académique</p>
-      </div>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content left">
-            <div class="timeline-date">2025 - 2026</div>
-            <h3>BUT 3 Informatique</h3>
-            <p class="timeline-school">IUT Marne la Vallée - Université Gustave Eiffel</p>
-            <div class="timeline-details">
-              <p><strong>Langages:</strong> Python, Java, C, C++, JavaScript, TypeScript, SQL, NoSQL</p>
-              <p><strong>Domaines:</strong> Développement avancé, qualité logicielle, maintenance applicative, évolution d'applications existantes</p>
-              <p><strong>Focus:</strong> Apprentissage, portfolio académique, optimisation, virtualisation, droit du numérique et communication</p>
-              <p><strong>Spécialisations:</strong></p>
-              <ul class="education-list">
-                <li>Programmation avancée, qualité algorithmique/développement, automatisation de la chaîne de production, nouveaux paradigmes de bases de données.</li>
-                <li>Aide à la décision et modélisations mathématiques, management, projet personnel/professionnel, anglais et économie durable.</li>
-                <li>Évolution d'application existante, développement avancé, maintenance applicative, stage et construction du portfolio.</li>
-                <li>Entrepreneuriat, propriété intellectuelle, organisation et diffusion de l'information.</li>
-              </ul>
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">Expérience</h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto rounded-full"></div>
             </div>
-          </div>
-        </div>
 
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content right">
-            <div class="timeline-date">2024 - 2025</div>
-            <h3>1ère du cycle d'ingénieur en Informatique</h3>
-            <p class="timeline-school">École d'ingénieur ESIEE PARIS</p>
-            <div class="timeline-details">
-              <p><strong>Domaines:</strong> Développement avancé, Réseaux, Programmation avancée, Qualité de programmation</p>
-              <p><strong>Technologies:</strong> Python, C, JavaScript, React, Java</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content left">
-            <div class="timeline-date">2021 - 2024</div>
-            <h3>Licence Mathématiques - Informatique</h3>
-            <p class="timeline-school">Université de Lille</p>
-            <div class="timeline-details">
-              <p><strong>Langages:</strong> C#, Java, Python, C, C++, JavaScript, SQL, JEE</p>
-              <p><strong>Environnements:</strong> Visual Studio, Eclipse, Android Studio</p>
-              <p><strong>Domaines couverts:</strong> Algorithmique, IA, Réalité virtuelle, Traitement d'images, Technologies 3D</p>
-              <p><strong>Spécialisations:</strong></p>
-              <ul class="education-list">
-                <li>Programmation : Python, Java, JavaScript, HTML, CSS, SQL</li>
-                <li>Analyse de données : NumPy, Matplotlib, Pandas, Excel</li>
-                <li>Mathématiques : Algèbre, Statistiques, Analyse, Géométrie</li>
-                <li>Informatique théorique : Logique, Bases de données, Automates, Langages réguliers et irréguliers</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experiences Section -->
-  <section id="experiences">
-    <div class="container">
-      <div class="section-title">
-        <h2>Expérience Professionnelle</h2>
-        <p>Mon parcours professionnel et académique</p>
-      </div>
-      <div class="experiences-container">
-        <div class="experience-item">
-          <div class="experience-header">
-            <h3>Développeur Python - Full Stack</h3>
-            <span class="experience-period">Octobre 2024 - Présent</span>
-          </div>
-          <p class="experience-company">Carestream Dental - Alternance</p>
-          <ul class="experience-list">
-            <li><strong>APIs REST :</strong> Django, Flask – conception, développement, adaptation aux besoins utilisateurs</li>
-            <li><strong>SQL :</strong> Optimisation des requêtes, gestion de bases de données, amélioration des performances</li>
-            <li><strong>GUI Python :</strong> Interfaces interactives (Tkinter, PyQt, DearPyGui, Qt), création de widgets (fenêtres, boutons, sliders, menus), optimisation de la fluidité</li>
-            <li><strong>Intégration de bibliothèques :</strong> Pandas, OpenCV, DearPyGui, etc</li>
-            <li><strong>Automatisation :</strong> Scripts Python, Bash, PowerShell – gain de temps et efficacité opérationnelle</li>
-          </ul>
-        </div>
-
-        <div class="experience-item">
-          <div class="experience-header">
-            <h3>Employé Polyvalent - Job Étudiant</h3>
-            <span class="experience-period">2021 - 2024</span>
-          </div>
-          <p class="experience-company">Burger King - Euralille</p>
-          <ul class="experience-list">
-            <li><strong>Accueil et service :</strong> Accueil des clients, gestion de caisse et des commandes</li>
-            <li><strong>Préparation des commandes :</strong> Participation active à la préparation en cuisine et au comptoir</li>
-            <li><strong>Travail en équipe :</strong> Collaborer efficacement avec les collègues et maintenir la propreté du poste de travail</li>
-            <li><strong>Formation :</strong> formation des nouveaux employés en cuisine et au comptoir</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="competences">
-    <div class="container">
-      <div class="section-title">
-        <h2>Compétences BUT 3</h2>
-        <p>Réalisation d’applications : conception, développement, validation</p>
-      </div>
-
-      <div class="competences-grid">
-        <article class="competence-card">
-          <div class="competence-icon">
-            <i class="fas fa-lightbulb"></i>
-          </div>
-          <h3>Conception</h3>
-          <p>Analyser un besoin, structurer une solution logicielle et définir une architecture adaptée.</p>
-          <ul>
-            <li>Modélisation d’applications et séparation des responsabilités.</li>
-            <li>Conception full-stack sur des projets comme Aryform (SAE).</li>
-            <li>Prise en compte des contraintes métier, de sécurité et de performance.</li>
-          </ul>
-        </article>
-
-        <article class="competence-card">
-          <div class="competence-icon">
-            <i class="fas fa-code"></i>
-          </div>
-          <h3>Développement</h3>
-          <p>Implémenter des applications fiables en mobilisant plusieurs langages, frameworks et outils.</p>
-          <ul>
-            <li>Développement en Python, Java, C, JavaScript et TypeScript.</li>
-            <li>Création d’API REST, interfaces graphiques et applications web modernes (SAE- Aryform).</li>
-            <li>Réalisation de projets variés : jeux, analyse de données, optimisation, logiciels métier.</li>
-          </ul>
-        </article>
-
-        <article class="competence-card">
-          <div class="competence-icon">
-            <i class="fas fa-vial"></i>
-          </div>
-          <h3>Validation</h3>
-          <p>Tester, déboguer et fiabiliser une application pour garantir sa qualité.</p>
-          <ul>
-            <li>Tests unitaires, validation des règles métier et contrôle des cas limites (Projet Jekins).</li>
-            <li>Correction de bugs complexes sur des projets web et algorithmiques.</li>
-            <li>Optimisation des performances, vérification des données et maintenance applicative (Projet Move To Cloud).</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-<!-- ...existing code... -->
-
-  <!-- Portfolio Section -->
-  <section id="projets">
-    <div class="container">
-      <div class="section-title">
-        <h2>Mes projets</h2>
-        <p>Découvrez mes derniers projets</p>
-      </div>
-
-      <div class="portfolio-filter">
-        <button class="filter-btn active" data-filter="all">Tous</button>
-        <button class="filter-btn" data-filter="pro">Projets Professionnels et Académiques</button>
-        <button class="filter-btn" data-filter="perso">Projets Personnels</button>
-      </div>
-
-      <div class="portfolio-grid">
-        <article class="portfolio-item" data-category="pro">
-          <h3 class="portfolio-title">Colombo</h3>
-          <img src="image/colombo.png" alt="Projet Colombo" class="portfolio-img">
-          <div class="portfolio-overlay">
-            <p>Développer et maintenir un logiciel de diagnostic des machines d'imagerie dentaire.</p>
-            <button type="button" class="btn open-project-popup">Voir ce que j'ai appris</button>
-          </div>
-          <div class="project-details" hidden>
-            <h4>Ce que j'ai appris</h4>
-            <ul>
-              <li>Conception et maintenance d'un logiciel métier en environnement santé.</li>
-              <li>Développement d'API REST avec Django/Flask.</li>
-              <li>Optimisation SQL et amélioration des performances.</li>
-              <li>Création d'interfaces Python (Tkinter, PyQt, DearPyGui, Qt), création de widgets (fenêtres, boutons, sliders, menus), optimisation de la fluidité</li>
-              <li>Automatisation avec Python, Bash et PowerShell.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="portfolio-item" data-category="pro">
-          <h3 class="portfolio-title">Splendor</h3>
-          <img src="image/splendor.jpg" alt="Projet Splendor" class="portfolio-img">
-          <div class="portfolio-overlay">
-            <p>Développer une application du jeu Splendor en respectant ses règles et mécaniques.</p>
-            <button type="button" class="btn open-project-popup">Voir ce que j'ai appris</button>
-            <a href="https://github.com/MaximeCaillaud/JavaSplendor" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Voir le code GitHub</a>
-          </div>
-          <div class="project-details" hidden>
-            <h4>Ce que j'ai appris</h4>
-            <ul>
-              <li><strong>Programmation orientée objet :</strong> modélisation d’entités claires comme <code>Player</code>, <code>Card</code>, <code>Noble</code>, <code>Board</code> et <code>TokenList</code>, avec encapsulation et responsabilités bien définies.</li>
-              <li><strong>Architecture propre :</strong> séparation <code>model / view / controller</code> pour distinguer la logique métier, l’affichage et les actions utilisateur.</li>
-              <li><strong>Moteur de jeu :</strong> formalisation des règles, gestion des tours, des états de partie et validation des actions possibles.</li>
-              <li><strong>Polymorphisme et conception orientée actions :</strong> mise en place de classes comme <code>BuyCardAction</code>, <code>ReserveCardAction</code> et <code>TakeThreeTokens</code>, dans une approche proche du pattern Command.</li>
-              <li><strong>Gestion de l’état et des contraintes :</strong> prise en compte des règles du jeu (jetons, coûts, réservations, nobles, score) et prévention des coups invalides.</li>
-              <li><strong>Double interface :</strong> adaptation de la même logique métier à une interface terminal et une interface graphique sans duplication du code.</li>
-              <li><strong>Organisation d’un projet Java :</strong> structuration en packages, gestion des ressources (images, cartes, nobles, jetons) et intégration de dépendances.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="portfolio-item" data-category="pro">
-          <h3 class="portfolio-title">Taquin</h3>
-          <img src="image/taquin.png" alt="Projet Taquin" class="portfolio-img">
-          <div class="portfolio-overlay">
-            <p>Reconcevoir un jeu classique avec une jouabilité moderne en langage C.</p>
-            <button type="button" class="btn open-project-popup">Voir ce que j'ai appris</button>
-          </div>
-          <div class="project-details" hidden>
-            <h4>Ce que j'ai appris</h4>
-            <ul>
-              <li>Structuration d'un projet en C et gestion de la mémoire.</li>
-              <li>Conception d'algorithmes de déplacement et de vérification des états.</li>
-              <li>Amélioration des graphismes et de l'ergonomie de jeu.</li>
-              <li>Débogage et tests sur les cas limites.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="portfolio-item" data-category="pro">
-          <h3 class="portfolio-title">Aryform</h3>
-          <img src="image/aryform.png" alt="Projet Aryform" class="portfolio-img">
-          <div class="portfolio-overlay">
-            <p>Application web de génération de formulaires dynamiques, collecte de réponses et tableau de bord d’analyse, avec intégration à des systèmes tiers comme Prestashop.</p>
-            <button type="button" class="btn open-project-popup">Voir ce que j'ai appris</button>
-            <a href="https://github.com/HayroMaki/Ary-Feedback" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Voir le code GitHub</a>
-          </div>
-          <div class="project-details" hidden>
-            <h4>Ce que j'ai appris</h4>
-            <ul>
-              <li><strong>Architecture full-stack :</strong> conception client-serveur avec SvelteKit, séparation frontend/backend/API/BDD.</li>
-              <li><strong>Base de données :</strong> intégration PostgreSQL via Supabase, architecture multi-tenant et isolement des organisations.</li>
-              <li><strong>Frontend moderne :</strong> Svelte 5 (runes), TailwindCSS 4, Svelte Flow, svelte-grid-5-ts et LayerChart.</li>
-              <li><strong>Gestion de données complexe :</strong> variables typées, interpolation, validation de graphes acycliques et prévention des branchements invalides.</li>
-              <li><strong>Authentification & sécurité :</strong> Supabase Auth, jetons d’invitation admin, RLS et middleware de contrôle d’accès.</li>
-              <li><strong>APIs & intégrations :</strong> endpoints REST, form actions SvelteKit, intégration email et cycle complet création → envoi → réponse → analyse.</li>
-              <li><strong>Traitement email & PII :</strong> parsing automatique, anonymisation avec Microsoft Presidio, microservices Docker.</li>
-              <li><strong>DevOps & déploiement :</strong> Docker multi-stage, docker-compose, déploiement cloud (Railway, Render, Fly.io), gestion des variables d’environnement.</li>
-              <li><strong>Qualité logicielle :</strong> TypeScript end-to-end, tests unitaires Vitest, architecture modulaire, conventions Git et documentation technique.</li>
-              <li><strong>UX avancée :</strong> toasts temps réel, modales, menus contextuels, aperçu live du formulaire, auto-layout des graphes avec ELK.js.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="portfolio-item" data-category="pro">
-          <h3 class="portfolio-title">Analyse de données des étudiants</h3>
-          <img src="image/arrondis_numpy.png" alt="Projet Analyse de données des étudiants" class="portfolio-img">
-          <div class="portfolio-overlay">
-            <p>Projet académique d’analyse statistique du cycle étudiant avec collecte, traitement et visualisation de données.</p>
-            <button type="button" class="btn open-project-popup">Voir ce que j'ai appris</button>
-          </div>
-          <div class="project-details" hidden>
-            <h4>Ce que j'ai appris</h4>
-            <ul>
-              <li><strong>Collecte et structuration de données :</strong> intégration de sources variées (CSV/Excel, bases scolaires, questionnaires, logs LMS comme Moodle), respect RGPD/éthique, anonymisation, documentation des variables et métadonnées.</li>
-              <li><strong>Analyse statistique avec Python, NumPy et Pandas :</strong> statistiques descriptives (moyenne, médiane, écart-type, quartiles, skewness, kurtosis), analyses bivariées/multivariées, corrélations (Pearson, Spearman), tests (t-test, ANOVA, chi-carré), régression linéaire/logistique, détection d’outliers, gestion des valeurs manquantes (imputation/suppression).</li>
-              <li><strong>Visualisation et reporting avec Matplotlib :</strong> histogrammes, boxplots, scatterplots, heatmaps de corrélation, barplots groupés/stacked, line charts temporels (avec possibilité d’extension vers Seaborn et Plotly).</li>
-              <li><strong>Recommandations orientées décision :</strong> transformation des insights en actions concrètes (ex. identification du risque d’échec lié à l’assiduité et proposition de tutorat ciblé).</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="portfolio-item" data-category="pro">
-          <h3 class="portfolio-title">VRP-Solver</h3>
-          <img src="image/VRP-Solver.png" alt="Projet VRP-Solver" class="portfolio-img">
-          <div class="portfolio-overlay">
-          <p>Optimisation de tournées de livraison pharmaceutique en Python et C, avec algorithme génétique, contrainte de 3h par tournée et génération d’un rapport PDF avec horaires et carte des trajets.</p>
-            <button type="button" class="btn open-project-popup">Voir ce que j'ai appris</button>
-            <a href="https://github.com/Oceane-Luyeye/Projet-Multidisciplinaire" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Voir le code GitHub</a>
-          </div>
-          <div class="project-details" hidden>
-            <h4>Ce que j'ai appris</h4>
-            <ul>
-              <li><strong>Algorithmique & C :</strong> implémentation d’un algorithme génétique en C pur (population, sélection élitiste, mutation, croisements), avec optimisation locale 2-opt pour affiner les tournées.</li>
-              <li><strong>Gestion des contraintes :</strong> segmentation des routes avec respect d’une limite de 180 minutes par camion, incluant une re-segmentation récursive si nécessaire.</li>
-              <li><strong>Mémoire en C :</strong> utilisation de <code>malloc</code>, <code>memcpy</code> et <code>free</code> pour gérer la mémoire dynamique.</li>
-              <li><strong>Python & interopérabilité :</strong> orchestration d’un pipeline bout-en-bout en Python, exécution d’un binaire C via <code>subprocess</code>, parsing de la sortie standard et compilation via Makefile.</li>
-              <li><strong>Données & APIs :</strong> appel à l’API OpenRouteService pour calculer des matrices réelles distance/temps, gestion des limites de requêtes par blocs, manipulation de CSV avec <code>pandas</code> et jointures de données.</li>
-              <li><strong>Génération de rapports :</strong> création de PDF structurés avec <code>fpdf2</code>, construction d’un JSON intermédiaire de trajets, cartographie avec <code>geopandas</code>, <code>matplotlib</code> et <code>contextily</code>.</li>
-              <li><strong>Architecture logicielle :</strong> séparation claire entre acquisition des données, optimisation, visualisation et génération de rapport, avec réutilisation d’une base locale de coordonnées pour limiter les appels API redondants.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="portfolio-item" data-category="pro">
-          <h3 class="portfolio-title">Jenkins</h3>
-          <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.png" alt="Projet Jenkins" class="portfolio-img">
-          <div class="portfolio-overlay">
-            <p>Mise en place d'une intégration continue avec Jenkins pour automatiser les builds, les tests et la livraison.</p>
-            <button type="button" class="btn open-project-popup">Voir ce que j'ai appris</button>
-            <a href="https://github.com/Daoudakone45/Jenkins" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Voir le code GitHub</a>
-          </div>
-          <div class="project-details" hidden>
-            <h4>Ce que j'ai appris</h4>
-            <ul>
-              <li><strong>CI/CD :</strong> création et exécution de pipelines Jenkins pour automatiser les étapes de build et de test.</li>
-              <li><strong>Qualité logicielle :</strong> détection précoce des erreurs grâce à l'exécution automatique des tests.</li>
-              <li><strong>Automatisation :</strong> orchestration des tâches répétitives pour fiabiliser le cycle de développement.</li>
-              <li><strong>Collaboration :</strong> standardisation des processus de livraison pour l'équipe.</li>
-              <li><strong>Lien GitHub :</strong> <a href="https://github.com/Daoudakone45/Jenkins" target="_blank" rel="noopener noreferrer">Repository Jenkins</a>.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="portfolio-item" data-category="perso">
-          <h3 class="portfolio-title">Jospia</h3>
-          <img src="image/jospia.png" alt="Projet Jospia" class="portfolio-img">
-          <div class="portfolio-overlay">
-            <p>Application web de gestion des inscriptions et paiements pour un événement d'une association organisant des séminaires.</p>
-            <button type="button" class="btn open-project-popup">Voir ce que j'ai appris</button>
-            <a href="https://github.com/Daoudakone45/jospia" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Voir le code GitHub</a>
-          </div>
-          <div class="project-details" hidden>
-            <h4>Ce que j'ai appris</h4>
-            <ul>
-              <li><strong>Architecture full-stack :</strong> séparation frontend (React/TypeScript + Vite + Tailwind) et backend (Node.js/Express), organisation en couches (controllers, services, routes, middleware).</li>
-              <li><strong>Base de données :</strong> Supabase/PostgreSQL, création de tables, index, politiques RLS, migrations SQL progressives et numérotées.</li>
-              <li><strong>Sécurité :</strong> authentification avec rôles (admin/user) et sécurisation des routes via middleware.</li>
-              <li><strong>Paiement en ligne :</strong> intégration PayDunya, gestion des flux, callbacks et redirections.</li>
-              <li><strong>Frontend :</strong> gestion d’état global (store), routing, composants réutilisables, appels API backend.</li>
-              <li><strong>Fonctionnalités métier :</strong> gestion des inscriptions, numéros de tickets, export Excel, génération de PDF (reçus).</li>
-              <li><strong>Debug & qualité :</strong> résolution de bugs complexes (RLS, slots de dortoirs, auth), tests manuels et scripts de diagnostic.</li>
-              <li><strong>Compétences transversales :</strong> documentation technique, pilotage de projet de A à Z, résolution d’incidents de production.</li>
-            </ul>
-          </div>
-        </article>
-
-        <!-- Tu peux garder tes autres projets sur le même modèle -->
-      </div>
-
-      <p id="portfolioEmpty" hidden>Aucun projet dans cette catégorie pour le moment.</p>
-    </div>
-  </section>
-
-  <!-- Popup Projet -->
-  <div id="projectPopup" class="project-popup" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="project-popup-content">
-      <button type="button" class="project-popup-close" aria-label="Fermer">×</button>
-      <h3 id="projectPopupTitle"></h3>
-      <div id="projectPopupBody"></div>
-    </div>
-  </div>
-
-  <!-- Interests Section -->
-  <section id="interests">
-    <div class="container">
-      <div class="section-title">
-        <h2>Centres d'Intérêt</h2>
-        <p>Passions et activités</p>
-      </div>
-      <div class="interests-container">
-        <div class="interest-item">
-          <div class="interest-card-inner">
-            <div class="interest-face interest-front">
-              <div class="interest-icon">
-                <i class="fas fa-futbol"></i>
-              </div>
-              <h3>Sport</h3>
-            </div>
-            <div class="interest-face interest-back">
-              <p>Passionné du football et fitness, je pratique régulièrement pour maintenir une bonne santé physique et mentale.</p>
-            </div>
-          </div>
-        </div>
-        <div class="interest-item">
-          <div class="interest-card-inner">
-            <div class="interest-face interest-front">
-              <div class="interest-icon">
-                <i class="fas fa-utensils"></i>
-              </div>
-              <h3>Cuisine</h3>
-            </div>
-            <div class="interest-face interest-back">
-              <p>J'aime découvrir et préparer de nouvelles recettes, explorer différentes cuisines du monde.</p>
-            </div>
-          </div>
-        </div>
-        <div class="interest-item">
-          <div class="interest-card-inner">
-            <div class="interest-face interest-front">
-              <div class="interest-icon">
-                <i class="fas fa-users"></i>
-              </div>
-              <h3>Vie Associative</h3>
-            </div>
-            <div class="interest-face interest-back">
-              <p>Impliqué dans la vie associative, je crois en l'importance du travail collaboratif et de l'engagement communautaire.</p>
-            </div>
-          </div>
-        </div>
-        <div class="interest-item">
-          <div class="interest-card-inner">
-            <div class="interest-face interest-front">
-              <div class="interest-icon">
-                <i class="fas fa-heart"></i>
-              </div>
-              <h3>Bénévolat</h3>
-            </div>
-            <div class="interest-face interest-back">
-              <p>Président du CVS (Conseil de Vie Sociale) au FJT Frédéric Ozanam et bénévole à l'Épicerie Solidaire Campésienne. J'organise des événements et représente les résidents.</p>
-            </div>
-          </div>
-        </div>
-        <div class="interest-item">
-          <div class="interest-card-inner">
-            <div class="interest-face interest-front">
-              <div class="interest-icon">
-                <i class="fas fa-music"></i>
-              </div>
-              <h3>Musique</h3>
-            </div>
-            <div class="interest-face interest-back">
-              <p>Grand amateur de musique, j'écoute et explore différents genres pour me détendre et m'inspirer.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <div class="container">
-      <div class="section-title">
-        <h2>Contact</h2>
-        <p>Discutons de votre projet</p>
-      </div>
-      <div class="contact-container">
-        <div>
-          <div class="contact-info">
-            <h3>Parlons de votre projet</h3>
-            <p>Vous avez un projet en tête ? Je serais ravi d'en discuter avec vous. Contactez-moi par email, téléphone ou en remplissant le formulaire ci-contre.</p>
-            <div class="contact-details">
-              <div class="contact-item">
-                <div class="contact-icon">
-                  <i class="fas fa-map-marker-alt"></i>
+            <div class="space-y-8">
+                <!-- Experience 1 -->
+                <div class="bg-white p-8 rounded-lg border-l-4 border-purple-600 shadow-sm">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-900">Développeur Web Stagiaire</h3>
+                            <p class="text-gray-600 text-sm mt-1">Entreprise TechSolutions | 6 mois (2024-2025)</p>
+                        </div>
+                        <span class="bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold mt-4 md:mt-0">Actuel</span>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-4">Développement de fonctionnalités frontend avec React et intégration d'APIs REST. Participation à la refonte UI/UX d'une application SaaS utilisée par 500+ clients.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-full">React</span>
+                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-full">Tailwind CSS</span>
+                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-full">API REST</span>
+                    </div>
                 </div>
-                <div class="contact-text">
-                  île_de_France, France
+
+                <!-- Experience 2 -->
+                <div class="bg-white p-8 rounded-lg border-l-4 border-blue-600 shadow-sm">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-900">Développeur Full Stack Freelance</h3>
+                            <p class="text-gray-600 text-sm mt-1">Projets Indépendants | 1 an (2023-2024)</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-4">Création de 5+ sites web et applications pour des PME. Gestion complète des projets de la conception au déploiement en production.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-full">JavaScript</span>
+                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-full">Node.js</span>
+                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-full">MySQL</span>
+                    </div>
                 </div>
-              </div>
-              <div class="contact-item">
-                <div class="contact-icon">
-                  <i class="fas fa-envelope"></i>
+
+                <!-- Experience 3 -->
+                <div class="bg-white p-8 rounded-lg border-l-4 border-green-600 shadow-sm">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-900">Formation - BUT Informatique</h3>
+                            <p class="text-gray-600 text-sm mt-1">Université Gustave Eiffel | 2024-2026</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-4">Études en développement d'applications, génie logiciel et technologies web. Projets pratiques en équipe et travaux en laboratoire.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-full">Java</span>
+                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-full">Python</span>
+                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-full">Web Dev</span>
+                    </div>
                 </div>
-                <div class="contact-text">
-                 kone.daouda8850@gmail.com
-                </div>
-              </div>
-              <div class="contact-item">
-                <div class="contact-icon">
-                  <i class="fas fa-phone"></i>
-                </div>
-                <div class="contact-text">
-                  +33 7 53 56 28 08
-                </div>
-              </div>
-              <div class="contact-item">
-                <div class="contact-icon">
-                  <i class="fas fa-linkedin"></i>
-                </div>
-                <div class="contact-text">
-                  <a href="https://www.linkedin.com/in/daouda-kone-848390273" target="_blank" style="color: var(--primary-color); text-decoration: none;">
-                  LinkedIn
-                  </a>
-                </div>
-              </div>
-              <div class="contact-item">
-                <div class="contact-icon">
-                  <i class="fas fa-file-download"></i>
-                </div>
-                <div class="contact-text">
-                  <a href="document/cv_Daouda_Kone.pdf" download style="color: var(--primary-color); text-decoration: none;">
-                  Télécharger mon CV
-                  </a>
-                </div>
-              </div>
             </div>
-            <div class="social-links" style="margin-top: 30px;">
-              <a href="https://github.com/Daoudakone45"><i class="fab fa-github"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-          </div>
         </div>
-        <div>
-          <div class="contact-form">
-            <h3>Envoyez-moi un message</h3>
-            <form id="contactForm" action="#" method="post">
-              <div class="form-group">
-                <input type="text" id="name" name="name" placeholder="Votre nom" required>
-              </div>
-              <div class="form-group">
-                <input type="email" id="email" name="email" placeholder="Votre email" required>
-              </div>
-              <div class="form-group">
-                <input type="text" id="subject" name="subject" placeholder="Sujet" required>
-              </div>
-              <div class="form-group">
-                <textarea id="message" name="message" placeholder="Votre message" required></textarea>
-              </div>
-              <button type="submit" class="btn">Envoyer</button>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 gradient-dark text-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Parlons de Collaboration</h2>
+                <p class="text-gray-300 text-lg">Je suis ouvert aux opportunités de stage, projet et collaboration.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="text-center p-8 bg-slate-800 rounded-lg card-hover">
+                    <div class="text-4xl text-purple-400 mb-4"><i class="fas fa-envelope"></i></div>
+                    <h3 class="text-xl font-bold mb-2">Email</h3>
+                    <a href="mailto:daouda@example.com" class="text-gray-300 hover:text-purple-400 transition">daouda@example.com</a>
+                </div>
+                <div class="text-center p-8 bg-slate-800 rounded-lg card-hover">
+                    <div class="text-4xl text-purple-400 mb-4"><i class="fas fa-phone"></i></div>
+                    <h3 class="text-xl font-bold mb-2">Téléphone</h3>
+                    <a href="tel:+33123456789" class="text-gray-300 hover:text-purple-400 transition">+33 1 23 45 67 89</a>
+                </div>
+                <div class="text-center p-8 bg-slate-800 rounded-lg card-hover">
+                    <div class="text-4xl text-purple-400 mb-4"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3 class="text-xl font-bold mb-2">Localisation</h3>
+                    <p class="text-gray-300">Île-de-France, France</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <form id="contact-form" class="bg-slate-800 p-8 rounded-lg">
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <input type="text" placeholder="Votre nom" class="w-full px-4 py-3 rounded-lg bg-slate-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-600" required>
+                    <input type="email" placeholder="Votre email" class="w-full px-4 py-3 rounded-lg bg-slate-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-600" required>
+                </div>
+                <input type="text" placeholder="Sujet" class="w-full px-4 py-3 rounded-lg bg-slate-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-600 mb-6" required>
+                <textarea placeholder="Votre message" rows="6" class="w-full px-4 py-3 rounded-lg bg-slate-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-600 mb-6 resize-none" required></textarea>
+                <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg font-semibold transition">Envoyer Mon Message</button>
             </form>
-          </div>
+
+            <!-- Social Links -->
+            <div class="mt-16 text-center">
+                <h3 class="text-2xl font-bold mb-8">Retrouvez-moi sur</h3>
+                <div class="flex justify-center gap-6">
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub" class="w-12 h-12 bg-slate-800 hover:bg-purple-600 rounded-full flex items-center justify-center text-xl transition">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn" class="w-12 h-12 bg-slate-800 hover:bg-purple-600 rounded-full flex items-center justify-center text-xl transition">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" title="Twitter" class="w-12 h-12 bg-slate-800 hover:bg-purple-600 rounded-full flex items-center justify-center text-xl transition">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 Daouda KONE. Tous droits réservés.</p>
-    </div>
-  </footer>
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-gray-400 text-center py-8">
+        <p>&copy; 2026 Daouda Kone. Tous droits réservés. | Conçu avec <span class="text-red-500">❤</span> et du code</p>
+    </footer>
 
-  <!-- EmailJS (client-side) -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser/dist/email.min.js"></script>
-
-  <script>
-    // Burger menu toggle
-    const burger = document.querySelector('.burger');
-    const navLinks = document.querySelector('.nav-links');
-    burger?.addEventListener('click', () => {
-      navLinks?.classList.toggle('nav-active');
-      burger.classList.toggle('toggle');
-    });
-
-    // Initialise EmailJS (remplace par ta clé publique)
-    emailjs.init('rGQl4zVnYipR1qDVU');
-
-    // Submit unique handler using EmailJS
-    (function () {
-      const contactForm = document.getElementById('contactForm');
-      if (!contactForm) return;
-
-      contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const btn = contactForm.querySelector('button[type="submit"]');
-        if (btn) btn.disabled = true;
-
-        emailjs.sendForm('Daoudakone45@', 'template_x3a3fdq', contactForm)
-          .then(() => {
-            alert('Message envoyé ✅');
-            contactForm.reset();
-          })
-          .catch((err) => {
-            console.error('EmailJS error:', err);
-            alert('Erreur envoi, réessaye plus tard.');
-          })
-          .finally(() => {
-            if (btn) btn.disabled = false;
-          });
-      });
-    })();
-
-    // Popup projets
-    (function () {
-      const popup = document.getElementById('projectPopup');
-      const popupTitle = document.getElementById('projectPopupTitle');
-      const popupBody = document.getElementById('projectPopupBody');
-      const closeBtn = popup?.querySelector('.project-popup-close');
-      const openButtons = document.querySelectorAll('.open-project-popup');
-
-      if (!popup || !popupTitle || !popupBody || !closeBtn || !openButtons.length) return;
-
-      const openPopup = (item) => {
-        const title =
-          item.querySelector('.portfolio-title')?.textContent?.trim() ||
-          item.querySelector('.portfolio-overlay h3')?.textContent?.trim() ||
-          'Projet';
-
-        const details = item.querySelector('.project-details');
-
-        popupTitle.textContent = title;
-        popupBody.innerHTML = details ? details.innerHTML : '<p>Aucun détail disponible.</p>';
-
-        popup.classList.add('show');
-        popup.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-      };
-
-      const closePopup = () => {
-        popup.classList.remove('show');
-        popup.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-      };
-
-      openButtons.forEach((btn) => {
-        btn.addEventListener('click', (e) => {
-          const item = e.target.closest('.portfolio-item');
-          if (item) openPopup(item);
-        });
-      });
-
-      closeBtn.addEventListener('click', closePopup);
-
-      popup.addEventListener('click', (e) => {
-        if (e.target === popup) closePopup();
-      });
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && popup.classList.contains('show')) closePopup();
-      });
-    })();
-
-    // Filtre des projets (Tous / Pro / Perso)
-    (function () {
-      const filterButtons = document.querySelectorAll('.portfolio-filter .filter-btn');
-      const items = document.querySelectorAll('.portfolio-grid .portfolio-item');
-      const emptyState = document.getElementById('portfolioEmpty');
-
-      if (!filterButtons.length || !items.length) return;
-
-      const applyFilter = (filter) => {
-        let visibleCount = 0;
-
-        items.forEach((item) => {
-          const category = item.dataset.category || '';
-          const shouldShow = filter === 'all' || category === filter;
-          item.style.display = shouldShow ? '' : 'none';
-          if (shouldShow) visibleCount++;
-        });
-
-        if (emptyState) {
-          emptyState.hidden = visibleCount !== 0;
-        }
-      };
-
-      filterButtons.forEach((btn) => {
-        btn.addEventListener('click', () => {
-          filterButtons.forEach((b) => b.classList.remove('active'));
-          btn.classList.add('active');
-          applyFilter(btn.dataset.filter || 'all');
-        });
-      });
-
-      // état initial
-      applyFilter('all');
-    })();
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
